@@ -1,0 +1,802 @@
+*{
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+.container{
+    display: flex;
+    width: 100%;
+}
+.bodyleft{
+    width: 30%;
+}
+
+.bodymid{
+    width: 40%;
+    background-color: #92c5fc;
+}
+
+.bodyright{
+    width: 30%;
+}
+
+.tieudemid{
+    text-align: center;
+}
+
+.trungthuong{
+    text-align: center;
+}
+
+.tieude{
+  font-weight: 900;
+  font-size: 30px;
+  font-style: italic;
+}
+
+.tieude1{
+  text-shadow: -1px 0 rgb(255, 255, 255), 0 1px rgb(255, 255, 255), 1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 255, 255);
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+  color: #f23d2c;
+  font-style: italic;
+}
+
+.tieude2{
+    font-weight: 700;
+    font-size: 20px;
+    color: blue;
+}
+
+.btn-1{
+    border: none;
+    width: 200px;
+    height: 30px;
+    font-size: 13px;
+    border-radius: 40px 40px;
+    color: red;
+    font-weight: 700;
+}
+
+.dauqua{
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 100%;
+
+}
+
+.hopqua{
+    background-color: beige;
+    margin-top: -5px;
+    margin-right: 15%;
+    margin-left: 15%;
+    /* height: px; */
+}
+
+.qua1 {
+    padding-left: 10%;
+    display: flex;
+    width: 100%;
+    /* margin-left: 13px; */
+    margin-top: 15px;
+    height: 130px;
+    padding-right: 10%;
+    transition: transform 0.10s ease;
+}
+
+.dau{
+  font-size: 40px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.icondau {
+    margin-right: -15px; 
+    margin-left: -14px;
+    width: 70px;
+    margin-bottom: -30px;
+}
+
+.bodymidthan{
+    text-align: center;
+}
+
+.btn-2{
+    border: none;
+    font-style: italic;
+    width: 200px;
+    height: 30px;
+    font-size: 13px;
+    border-radius: 40px 40px;
+    color: aliceblue;
+    background-color: blue;
+    font-weight: 900;
+}
+
+.btn-3{
+    border: none;
+    font-style: italic;
+    width: 250px;
+    height: 30px;
+    font-size: 14px;
+    border-radius: 40px 40px;
+    color:#083787;
+    background-color: rgb(83 184 242);
+    font-weight: 900;
+}
+
+.duoi{
+    width: 100%;
+    height: 400px;
+}
+
+.bodymidgancuoi{
+    text-align: center;
+}
+
+.bieutuongxahoi {
+    margin-left: 34%;
+    display: flex;
+}
+.icon {
+    margin-top: 15px;
+    text-align: center;
+    width: 70px;
+    height: 70px;
+    margin-left: 15px;
+}
+.round {
+    margin-left: 5px;
+    width: 60px; /* Đặt kích thước chiều rộng */
+    height: 60px; /* Đặt kích thước chiều cao */
+    border-radius: 50%; /* Tạo hình dạng ô tròn */
+    background-color: #fdfdfd; /* Tùy chỉnh màu nền */
+  }
+
+
+.flip-container-dau{
+    display:flex;
+}
+
+.flip-container-giua{
+    display:flex;
+}
+
+.flip-container-cuoi{
+    display:flex;
+}
+
+/* /click ra mang xa hoi/ */
+  .image-link {
+    display: inline-block; /* Hiển thị như một khối inline */
+  }
+  
+  .image-link img {
+    margin-top: 5px;
+    margin-left: 5px;
+    width: 50px; /* Đặt kích thước ảnh */
+    height: auto;
+    border-radius: 50%; /* Tạo hình dạng ô tròn */
+    transition: transform 0.3s; /* Hiệu ứng transition cho phần tử ảnh */
+  }
+  .image-link1 img {
+    margin-top: 6px;
+    margin-left: 3px;
+    width: 55px; /* Đặt kích thước ảnh */
+    height: auto;
+    border-radius: 50%; /* Tạo hình dạng ô tròn */
+    transition: transform 0.3s; /* Hiệu ứng transition cho phần tử ảnh */
+  }
+  
+  .image-link:hover img {
+    transform: scale(1.2); /* Phóng to ảnh khi di chuột vào */
+  }
+  .image-link1:hover img {
+    transform: scale(1.2); /* Phóng to ảnh khi di chuột vào */
+  }
+  
+  .front:hover{
+     transform: scale(1.1); /* phóng to khi chọn hộp quà */
+  }
+  
+
+/* lật ảnh 3 ảnh đầu  */ 
+.flip-container {
+    display: flex;
+    perspective: 1000px; /* Đặt perspective cho hiệu ứng lật */
+    width: 100%;
+  }
+  .flipper {
+    width: 100%;
+    height: 150px;
+    transform-style: preserve-3d; /* Đảm bảo 3D effect */
+    transition: transform 0.6s; /* Hiệu ứng transition cho phần tử */
+  }
+  .front,
+  .back {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    backface-visibility: hidden; /* Ẩn mặt sau của phần tử */
+  }
+  
+  .front {
+    z-index: 2; /* Hiển thị phía trước */
+  }
+  
+  .back {
+    transform: rotateY(180deg); /* Quay 180 độ */
+    z-index: 1; /* Hiển thị phía sau */
+    opacity: 0; /* Ẩn phía sau ban đầu */
+  }
+  
+  .flip-container.flipped .flipper {
+    transform: rotateY(180deg); /* Lật phần tử khi có class "flipped" */
+  }
+  
+  .flip-container.flipped .back {
+    opacity: 1; /* Hiển thị ảnh phía sau khi lật */
+  }
+  /* lật ảnh-2 */
+  .flip-container-1{
+    display: flex;
+    perspective: 1000px; /* Đặt perspective cho hiệu ứng lật */
+    width: 100%;
+  }
+  .flipper-1 {
+    width: 100%;
+    height: 150px;
+    transform-style: preserve-3d; /* Đảm bảo 3D effect */
+    transition: transform 0.6s; /* Hiệu ứng transition cho phần tử */
+  }
+  .front-1,
+  .back-1 {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    backface-visibility: hidden; /* Ẩn mặt sau của phần tử */
+  }
+  
+  .front-1 {
+    z-index: 2; /* Hiển thị phía trước */
+  }
+  
+  .back-1 {
+    transform: rotateY(180deg); /* Quay 180 độ */
+    z-index: 1; /* Hiển thị phía sau */
+    opacity: 0; /* Ẩn phía sau ban đầu */
+  }
+  
+  .flip-container-1.flipped .flipper-1 {
+    transform: rotateY(180deg); /* Lật phần tử khi có class "flipped" */
+  }
+  
+  .flip-container-1.flipped .back-1 {
+    opacity: 1; /* Hiển thị ảnh phía sau khi lật */
+  }
+  /* ----------------------lật ảnh 3----------------------- */
+  .flip-container-2{
+    display: flex;
+    perspective: 1000px; /* Đặt perspective cho hiệu ứng lật */
+    width: 100%;
+  }
+  .flipper-2 {
+    width: 100%;
+    height: 150px;
+    transform-style: preserve-3d; /* Đảm bảo 3D effect */
+    transition: transform 0.6s; /* Hiệu ứng transition cho phần tử */
+  }
+  .front-2,
+  .back-2 {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    backface-visibility: hidden; /* Ẩn mặt sau của phần tử */
+  }
+  
+  .front-2 {
+    z-index: 2; /* Hiển thị phía trước */
+  }
+  
+  .back-2 {
+    transform: rotateY(180deg); /* Quay 180 độ */
+    z-index: 1; /* Hiển thị phía sau */
+    opacity: 0; /* Ẩn phía sau ban đầu */
+  }
+  
+  .flip-container-2.flipped .flipper-2 {
+    transform: rotateY(180deg); /* Lật phần tử khi có class "flipped" */
+  }
+  
+  .flip-container-2.flipped .back-2 {
+    opacity: 1; /* Hiển thị ảnh phía sau khi lật */
+  }
+/* -----------------lật ảnh 3 anh giữa-------------------------------*/
+.flip-container-3 {
+    display: flex;
+    perspective: 1000px; /* Đặt perspective cho hiệu ứng lật */
+    width: 100%;
+  }
+  .flipper-3 {
+    width: 100%;
+    height: 150px;
+    transform-style: preserve-3d; /* Đảm bảo 3D effect */
+    transition: transform 0.6s; /* Hiệu ứng transition cho phần tử */
+  }
+  .front-3,
+  .back-3 {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    backface-visibility: hidden; /* Ẩn mặt sau của phần tử */
+  }
+  
+  .front-3 {
+    z-index: 2; /* Hiển thị phía trước */
+  }
+  
+  .back-3{
+    transform: rotateY(180deg); /* Quay 180 độ */
+    z-index: 1; /* Hiển thị phía sau */
+    opacity: 0; /* Ẩn phía sau ban đầu */
+  }
+  
+  .flip-container-3.flipped .flipper-3 {
+    transform: rotateY(180deg); /* Lật phần tử khi có class "flipped" */
+  }
+  
+  .flip-container-3.flipped .back-3 {
+    opacity: 1; /* Hiển thị ảnh phía sau khi lật */
+  }
+/*--------------------------- lật ảnh 3---------------------------- */
+.flip-container-4 {
+    display: flex;
+    perspective: 1000px; /* Đặt perspective cho hiệu ứng lật */
+    width: 100%;
+  }
+.flipper-4 {
+    width: 100%;
+    height: 150px;
+    transform-style: preserve-3d; /* Đảm bảo 3D effect */
+    transition: transform 0.6s; /* Hiệu ứng transition cho phần tử */
+  }
+  .front-4,
+  .back-4 {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    backface-visibility: hidden; /* Ẩn mặt sau của phần tử */
+  }
+  
+  .front-4 {
+    z-index: 2; /* Hiển thị phía trước */
+  }
+  
+  .back-4{
+    transform: rotateY(180deg); /* Quay 180 độ */
+    z-index: 1; /* Hiển thị phía sau */
+    opacity: 0; /* Ẩn phía sau ban đầu */
+  }
+  
+  .flip-container-4.flipped .flipper-4 {
+    transform: rotateY(180deg); /* Lật phần tử khi có class "flipped" */
+  }
+  
+  .flip-container-4.flipped .back-4 {
+    opacity: 1; /* Hiển thị ảnh phía sau khi lật */
+  }
+  /* lat anh 4 */
+  .flip-container-5 {
+    display: flex;
+    perspective: 1000px; /* Đặt perspective cho hiệu ứng lật */
+    width: 100%;
+  }
+.flipper-5 {
+    width: 100%;
+    height: 150px;
+    transform-style: preserve-3d; /* Đảm bảo 3D effect */
+    transition: transform 0.6s; /* Hiệu ứng transition cho phần tử */
+  }
+  .front-5,
+  .back-5 {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    backface-visibility: hidden; /* Ẩn mặt sau của phần tử */
+  }
+  
+  .front-5 {
+    z-index: 2; /* Hiển thị phía trước */
+  }
+  
+  .back-5{
+    transform: rotateY(180deg); /* Quay 180 độ */
+    z-index: 1; /* Hiển thị phía sau */
+    opacity: 0; /* Ẩn phía sau ban đầu */
+  }
+  
+  .flip-container-5.flipped .flipper-5 {
+    transform: rotateY(180deg); /* Lật phần tử khi có class "flipped" */
+  }
+  
+  .flip-container-5.flipped .back-5 {
+    opacity: 1; /* Hiển thị ảnh phía sau khi lật */
+  }
+
+
+/* -------------------lật ảnh 3 ảnh cuối---------------------- */
+.flip-container-6 {
+    display: flex;
+    perspective: 1000px; /* Đặt perspective cho hiệu ứng lật */
+    width: 100%;
+  }
+  .flipper-6 {
+    width: 100%;
+    height: 150px;
+    transform-style: preserve-3d; /* Đảm bảo 3D effect */
+    transition: transform 0.6s; /* Hiệu ứng transition cho phần tử */
+  }
+  .front-6,
+  .back-6 {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    backface-visibility: hidden; /* Ẩn mặt sau của phần tử */
+  }
+  
+  .front-6 {
+    z-index: 2; /* Hiển thị phía trước */
+  }
+  
+  .back-6{
+    transform: rotateY(180deg); /* Quay 180 độ */
+    z-index: 1; /* Hiển thị phía sau */
+    opacity: 0; /* Ẩn phía sau ban đầu */
+  }
+  
+  .flip-container-6.flipped .flipper-6 {
+    transform: rotateY(180deg); /* Lật phần tử khi có class "flipped" */
+  }
+  
+  .flip-container-6.flipped .back-6 {
+    opacity: 1; /* Hiển thị ảnh phía sau khi lật */
+  }
+  
+  
+/*------------------lật ảnh--------------------*/
+.flip-container-7 {
+    display: flex;
+    perspective: 1000px; /* Đặt perspective cho hiệu ứng lật */
+    width: 100%;
+  }
+  .flipper-7 {
+    width: 100%;
+    height: 150px;
+    transform-style: preserve-3d; /* Đảm bảo 3D effect */
+    transition: transform 0.6s; /* Hiệu ứng transition cho phần tử */
+  }
+  .front-7,
+  .back-7 {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    backface-visibility: hidden; /* Ẩn mặt sau của phần tử */
+  }
+  
+  .front-7 {
+    z-index: 2; /* Hiển thị phía trước */
+  }
+  
+  .back-7{
+    transform: rotateY(180deg); /* Quay 180 độ */
+    z-index: 1; /* Hiển thị phía sau */
+    opacity: 0; /* Ẩn phía sau ban đầu */
+  }
+  
+  .flip-container-7.flipped .flipper-7 {
+    transform: rotateY(180deg); /* Lật phần tử khi có class "flipped" */
+  }
+  
+  .flip-container-7.flipped .back-7 {
+    opacity: 1; /* Hiển thị ảnh phía sau khi lật */
+  }
+  
+  /*  */
+  .flip-container-8 {
+    display: flex;
+    perspective: 1000px; /* Đặt perspective cho hiệu ứng lật */
+    width: 100%;
+  }
+  .flipper-8 {
+    width: 100%;
+    height: 160px;
+    transform-style: preserve-3d; /* Đảm bảo 3D effect */
+    transition: transform 0.6s; /* Hiệu ứng transition cho phần tử */
+  }
+  .front-8,
+  .back-8 {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    backface-visibility: hidden; /* Ẩn mặt sau của phần tử */
+  }
+  
+  .front-8 {
+    z-index: 2; /* Hiển thị phía trước */
+  }
+  
+  .back-8{
+    transform: rotateY(180deg); /* Quay 180 độ */
+    z-index: 1; /* Hiển thị phía sau */
+    opacity: 0; /* Ẩn phía sau ban đầu */
+  }
+  
+  .flip-container-8.flipped .flipper-8 {
+    transform: rotateY(180deg); /* Lật phần tử khi có class "flipped" */
+  }
+  
+  .flip-container-8.flipped .back-8 {
+    opacity: 1; /* Hiển thị ảnh phía sau khi lật */
+  }
+
+   .signup-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+  }
+  .signup-popup-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #df0707;
+    text-align: center;
+    border-radius: 5px;
+    border: 2px solid #fff;
+  }
+
+  /*-------------- CSS cho popup thông báo------------------------------ */
+  .notification-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+  }
+  .notification-popup-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    padding: 20px;
+    background-color: #e60606;
+    text-align: center;
+    border-radius: 5px;
+    border: 2px solid #fff;
+  }
+  .dangky input{
+    height: 25px;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+    border: none;
+  }
+  .btn-dangky{
+    font-weight: 600;
+    height: 25px;
+    border-radius: 5px;
+    background-color:#FFCC00;
+    color:#CC0000;
+    width: 100%;
+    border: none;
+  }
+  .thongtin{
+    font-weight: 1000;
+    color:rgb(243, 161, 8); 
+  }
+  .thongbao{
+    font-weight: 1000;
+    color:rgb(243, 161, 8); 
+  }
+  .notification-popup-inner p{
+    color: #fdfdfd;
+  }
+  /*--------------popup thông báo quà------------------- */
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+  font-weight: 700;
+  color: #fdfdfd;
+  background-color: #da0505;
+  margin: 20% auto;
+  padding: 20px;
+  border-radius: 5px;
+  width: 370px;
+  text-align: center;
+  border: 2px solid #fff;
+}
+/* đóng hộp quà cafe laha */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* đóng hộp quà 200k */
+
+.close2 {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close2:hover,
+.close2:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* đóng hộp quà 300k */
+
+.close3 {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close3:hover,
+.close3:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* đóng hộp quà 500k */
+.close4 {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close4:hover,
+.close4:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* đóng hộp qùa 800k */
+.close5 {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close5:hover,
+.close5:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* de chua */
+/* ds trúng  */
+.popup5 {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content1 {
+  background-color: #bb3f36;
+  border-radius: 5px;
+  margin: 10% auto;
+  padding: 13px;
+  border: 2px solid #ffffffa0;
+  width: 35%;
+  text-align: center; /* Canh giữa nội dung */
+}
+
+/* #new-popup{
+  font-weight: 700;
+  color: #fdfdfd;
+  background-color: #da0505;
+  margin: 20% auto;
+  padding: 20px;
+  border-radius: 5px;
+  width: 370px;
+  text-align: center;
+  border: 2px solid #fff;
+} */
+
+.form-ds{
+  background-color: yellow;
+  border: 2px solid #ffffffa0;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.label-ds{
+  font-size: 14px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.form-ds-1{
+  background-color: white;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.label-ds-1{
+  text-align: center;
+  font-size: 13px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#test{
+  width:100%;
+  height:74px;
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+
+/* thông báo gift quà */
+.btn-xacnhan{
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  height: 25px;
+  background-color: #FFCC00;
+  color:#bb3f36 ;
+  font-weight: 800;
+}
+.trungthuong-1{
+  font-weight: 800;
+  color: #FFCC00;
+}
+
+
